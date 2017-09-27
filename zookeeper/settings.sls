@@ -3,7 +3,7 @@
 {%- set g  = salt['grains.get']('zookeeper', {}) %}
 {%- set gc = g.get('config', {}) %}
 
-{%- set java_home         = salt['grains.get']('java_home', salt['pillar.get']('java_home', '/usr/lib/java')) %}
+{%- set java_home         = salt['grains.get']('java_home', salt['pillar.get']('java_home', g.get('java_home', p.get('java_home', '/usr/lib/java')))) %}
 
 # these are global - hence pillar-only
 {%- set uid               = p.get('uid', '6030') %}
