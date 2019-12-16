@@ -52,9 +52,9 @@
 #            - initial_heap_size:
 #            - jvm_opts:
 #
-{%- set max_perm_size        = gc.get('max_perm_size', pc.get('max_perm_size', 128)) %}
-{%- set max_heap_size        = gc.get('max_heap_size', pc.get('max_heap_size', 1024)) %}
-{%- set initial_heap_size    = gc.get('initial_heap_size', pc.get('initial_heap_size', 256)) %}
+{%- set max_perm_size        = gc.get('max_perm_size', pc.get('max_perm_size', 128m)) %}
+{%- set max_heap_size        = gc.get('max_heap_size', pc.get('max_heap_size', 1024m)) %}
+{%- set initial_heap_size    = gc.get('initial_heap_size', pc.get('initial_heap_size', 256m)) %}
 {%- set jvm_opts             = gc.get('jvm_opts', pc.get('jvm_opts', '')) %}
 
 {%- set alt_config           = salt['grains.get']('zookeeper:config:directory', '/etc/zookeeper/conf') %}
